@@ -55,6 +55,11 @@ resource "google_container_cluster" "jx_cluster" {
     }
   }
 
+  private_cluster_config {
+    enable_private_nodes = true
+    enable_private_endpoint = true
+  }
+
   node_config {
     preemptible  = var.node_preemptible
     machine_type = var.node_machine_type
