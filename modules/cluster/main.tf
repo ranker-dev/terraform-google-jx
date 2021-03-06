@@ -55,6 +55,11 @@ resource "google_container_cluster" "jx_cluster" {
     }
   }
 
+  ip_allocation_policy {
+    cluster_ipv4_cidr_block = ""
+    services_ipv4_cidr_block = ""
+  }
+
   private_cluster_config {
     enable_private_nodes = true
     enable_private_endpoint = true
