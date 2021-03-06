@@ -33,6 +33,12 @@ variable "cluster_network" {
   default     = "default"
 }
 
+variable "cluster_subnetwork" {
+  description = "The name of the subnetwork (VPC) to which the cluster is connected"
+  type = string
+  default = ""
+}
+
 variable "bucket_location" {
   description = "Bucket location for storage"
   type        = string
