@@ -66,6 +66,13 @@ resource "google_container_cluster" "jx_cluster" {
     master_ipv4_cidr_block = "172.16.3.0/28"
   }
 
+  master_authorized_networks_config {
+    cidr_blocks {
+      cidr_block = "10.0.0.2/32"
+      display_name = "vpn"
+    }
+  }
+
   node_config {
     preemptible  = var.node_preemptible
     machine_type = var.node_machine_type
