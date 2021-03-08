@@ -7,10 +7,6 @@ output "cluster_location" {
 }
 
 output "cluster_endpoint" {
-  value = google_container_cluster.jx_cluster.endpoint
-}
-
-output "cluster_private_endpoint" {
   value = google_container_cluster.jx_cluster.private_cluster_config[0].private_endpoint
 }
 
