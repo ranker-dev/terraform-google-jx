@@ -7,7 +7,7 @@ output "cluster_location" {
 }
 
 output "cluster_endpoint" {
-  value = google_container_cluster.jx_cluster.endpoint
+  value = google_container_cluster.jx_cluster.private_endpoint
 }
 
 output "cluster_client_certificate" {
