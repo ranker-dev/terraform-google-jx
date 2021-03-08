@@ -189,7 +189,9 @@ module "cloud-nat" {
   name = var.cluster_subnetwork
   create_router = true
   network = var.cluster_network
-  subnetworks = [var.cluster_subnetwork]
+  subnetworks = [{
+    name = var.cluster_subnetwork
+  }]
 }
 
 // ----------------------------------------------------------------------------
