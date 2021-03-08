@@ -189,7 +189,7 @@ module "cloud-nat" {
   name = var.cluster_subnetwork
   create_router = true
   network = var.cluster_network
-  source_subnetwork_ip_ranges_to_nat = LIST_OF_SUBNETWORKS
+  source_subnetwork_ip_ranges_to_nat = "LIST_OF_SUBNETWORKS"
   subnetworks = [{
       name = var.cluster_subnetwork
       secondary_ip_range_names = ["ALL_IP_RANGES"]
