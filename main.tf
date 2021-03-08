@@ -180,6 +180,18 @@ module "cluster" {
   kuberhealthy = var.kuberhealthy
 }
 
+module "cloud-nat" {
+  source = "terraform-google-modules/cloud-nat/google"
+  version = "~> 1.2"
+  project_id = var.gcp_project
+  region = "us-west1"
+  router = var.cluster_subnetwork
+  name = var.cluster_subnetwork
+  create_router = true
+  network = var.cluster_network
+  subnetworks = [var.cluster_subnetwork]
+}
+
 // ----------------------------------------------------------------------------
 // Setup all required resources for using the  bank-vaults operator
 // See https://github.com/banzaicloud/bank-vaults
