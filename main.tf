@@ -195,6 +195,9 @@ module "cloud-nat" {
       source_ip_ranges_to_nat = ["ALL_IP_RANGES"]
     }
   ]
+  depends_on = [
+    module.cluster
+  ]
 }
 
 // ----------------------------------------------------------------------------
