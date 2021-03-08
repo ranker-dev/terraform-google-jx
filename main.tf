@@ -190,8 +190,10 @@ module "cloud-nat" {
   create_router = true
   network = var.cluster_network
   subnetworks = [{
-    name = var.cluster_subnetwork
-  }]
+      name = var.cluster_subnetwork
+      source_ip_ranges_to_nat = ["ALL_IP_RANGES"]
+    }
+  ]
 }
 
 // ----------------------------------------------------------------------------
